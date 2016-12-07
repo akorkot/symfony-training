@@ -1,5 +1,7 @@
 {% extends 'BloggerBlogBundle::layout.html.twig' %}
 
-{% block body %}
-    Blog homepage
-{% endblock %}
+<form action="{{ path('BloggerBlogBundle_contact') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
