@@ -22,8 +22,8 @@
                     {% block navigation %}
                         <nav>
                             <ul class="navigation">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
+                                <li><a href="{{ path('BloggerBlogBundle_homepage') }}">Home</a></li>
+                                <li><a href="{{ path('BloggerBlogBundle_about') }}">About</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
                         </nav>
@@ -31,7 +31,7 @@
                 </div>
 
                 <hgroup>
-                    <h2>{% block blog_title %}<a href="#">symblog</a>{% endblock %}</h2>
+                    <h2>{% block blog_title %}<a href="{{ path('BloggerBlogBundle_homepage') }}">symblog</a>{% endblock %}</h2>
                     <h3>{% block blog_tagline %}<a href="#">creating a blog in Symfony2</a>{% endblock %}</h3>
                 </hgroup>
             </header>
@@ -45,7 +45,7 @@
 
             <div id="footer">
                 {% block footer %}
-                    Symfony2 blog tutorial - created by <a href="https://github.com/dsyph3r">dsyph3r</a>
+                    Symfony2 blog tutorial - created by <a href="https://github.com/akorkot">Ayoub Korkot</a>
                 {% endblock %}
             </div>
         </section>
