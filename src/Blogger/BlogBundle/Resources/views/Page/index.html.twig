@@ -1,7 +1,6 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/contact.html.twig #}
 {% extends 'BloggerBlogBundle::layout.html.twig' %}
 
-<form action="{{ path('BloggerBlogBundle_contact') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-
-    <input type="submit" />
-</form>
+{% block body %}
+    Hello world
+{% endblock %}

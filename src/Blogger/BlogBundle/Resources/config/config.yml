@@ -1,0 +1,4 @@
+## YAML Template.
+parameters:
+    # Blogger contact email address
+    blogger_blog.emails.contact_email: ayoub.korkot@gmail.com
