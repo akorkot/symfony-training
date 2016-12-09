@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="blog")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Blog
 {
@@ -42,8 +43,6 @@ class Blog
      */
     protected $tags;
 
-    protected $comments;
-
     /**
      * @ORM\Column(type="datetime")
      */
@@ -53,6 +52,15 @@ class Blog
      * @ORM\Column(type="datetime")
      */
     protected $updated;
+    
+    
+    protected $comments = array();    
+    
+    public function __construct()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+    }
     
     
     /**
@@ -225,4 +233,18 @@ class Blog
     {
         return $this->updated;
     }
+    
+    public function getComments()
+    {
+        return $this->comments;
+    }
+    
+    /**
+     * @ORM\preUpdate
+     */
+    public function setUpdatedValue()
+    {
+        $this->setUpdated(new \DateTime());
+    }    
+    
 }
