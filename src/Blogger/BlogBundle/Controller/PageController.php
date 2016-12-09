@@ -10,8 +10,23 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class PageController extends Controller
 {
     public function indexAction()
-    {
-        return $this->render('BloggerBlogBundle:Page:index.html.twig');
+    {   
+        
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+
+        $blogs = $em->createQueryBuilder()
+                    ->select('b')
+                    ->from('BloggerBlogBundle:Blog',  'b')
+                    ->addOrderBy('b.created', 'DESC')
+                    ->getQuery()
+                    ->getResult();
+        
+        var_dump($blogs);
+        
+        return $this->render('BloggerBlogBundle:Page:index.html.twig', array(
+            "blogs" => $blogs
+        ));
     }
 
 	public function aboutAction()
