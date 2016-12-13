@@ -15,14 +15,8 @@ class PageController extends Controller
         $em = $this->getDoctrine()
                    ->getEntityManager();
 
-        $blogs = $em->createQueryBuilder()
-                    ->select('b')
-                    ->from('BloggerBlogBundle:Blog',  'b')
-                    ->addOrderBy('b.created', 'DESC')
-                    ->getQuery()
-                    ->getResult();
-        
-        var_dump($blogs);
+        $blogs = $em->getRepository('BloggerBlogBundle:Blog')
+                    ->getLatestBlogs();
         
         return $this->render('BloggerBlogBundle:Page:index.html.twig', array(
             "blogs" => $blogs
@@ -49,7 +43,6 @@ class PageController extends Controller
                     if ($form->isValid()) {
 	            // Perform some action, such as sending an email
                      
-                        
                     $templateBody = $this->renderView('BloggerBlogBundle:Page:contactEmail.txt.twig', array('enquiry' => $enquiry));
                     
                     $message = \Swift_Message::newInstance();
