@@ -24,7 +24,8 @@ class BlogController extends Controller
         
         return $this->render('BloggerBlogBundle:Blog:show.html.twig', array(
                 'blog' => $blog,
-                'comments' => $comments
+                'comments' => $comments,
+                'blog_id' => $blog_id
             )
         );
         
