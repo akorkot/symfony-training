@@ -7,16 +7,13 @@
     <header>
         <h1>Contact symblog</h1>
     </header>
-    
-  
+     
     {% for flashMessage in app.session.flashbag.get('blogger-notice') %}
         <div class="blogger-notice">
             {{ flashMessage }}
         </div>
     {% endfor %}
-
-
-
+ 
     <p>Want to contact symblog?</p>
 
     <form action="{{ path('BloggerBlogBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">

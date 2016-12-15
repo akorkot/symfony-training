@@ -5,7 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BlogController extends Controller
 {
-        
+    
     /**
      * Show a blog entry
      */
@@ -30,6 +30,5 @@ class BlogController extends Controller
         );
         
     }
-        
         
 }
