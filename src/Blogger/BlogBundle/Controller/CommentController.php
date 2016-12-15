@@ -11,6 +11,7 @@ use Blogger\BlogBundle\Form\CommentType;
  */
 class CommentController extends Controller
 {
+   
     public function newAction($blog_id)
     {
         $blog = $this->getBlog($blog_id);

@@ -53,6 +53,7 @@ class Comment
      */
     protected $updated;
 
+    
     public function __construct()
     {
         $this->setCreated(new \DateTime());

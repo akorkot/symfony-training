@@ -4,6 +4,7 @@ namespace Blogger\BlogBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CommentType extends AbstractType
 {
@@ -23,8 +24,9 @@ class CommentType extends AbstractType
     
     public function getName()
     {
-        return 'commenttype';
+        return 'blogger_blogbundle_commenttype';
     }
+    
 
 
 }

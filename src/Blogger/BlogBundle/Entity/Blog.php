@@ -280,4 +280,14 @@ class Blog
     {
         $this->comments->removeElement($comments);
     }
+    
+    /**
+     * Remove comments
+     *
+     * @param \Blogger\BlogBundle\Entity\Comment $comments
+     */    
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }
