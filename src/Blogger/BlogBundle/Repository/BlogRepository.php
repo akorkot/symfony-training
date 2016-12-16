@@ -23,7 +23,8 @@ class BlogRepository extends EntityRepository
     public function getLatestBlogs($limit = null)
     {
         $qb = $this->createQueryBuilder('b')
-                   ->select('b')
+                   ->select('b, c')
+                   ->leftJoin('b.comments', 'c')
                    ->addOrderBy('b.created', 'DESC');
 
         if (false === is_null($limit)) {
@@ -33,6 +34,50 @@ class BlogRepository extends EntityRepository
         return $qb->getQuery()
                   ->getResult();
     }
+
+    public function getTags()
+    {
+        $blogTags = $this->createQueryBuilder('b')
+                         ->select('b.tags')
+                         ->getQuery()
+                         ->getResult();
+
+        $tags = array();
+        foreach ($blogTags as $blogTag)
+        {
+            $bTags = explode(",", $blogTag['tags']);
+            $tags = array_merge($bTags, $tags);
+        }
+
+        foreach ($tags as &$tag)
+        {
+            $tag = trim($tag);
+        }
+
+        return $tags;
+    }
+
+    public function getTagWeights($tags)
+    {
+        $tagWeights = array();
+        
+        if (empty($tags)) {
+            return $tagWeights;
+        }
+        
+        foreach ($tags as $tag)
+        {
+            $tagWeights[$tag] = (isset($tagWeights[$tag])) ? $tagWeights[$tag] + 1 : 1;
+        }
+        
+        // Shuffle the tags
+        uksort($tagWeights, function() {
+            return rand() > rand();
+        });
+        
+        return $tagWeights;
+    }
+    
 }
 
 

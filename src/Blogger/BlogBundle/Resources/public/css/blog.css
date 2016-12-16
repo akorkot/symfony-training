@@ -19,8 +19,7 @@ form.blogger ul li { color: #ff0000; margin-bottom: 5px; }
 .blog .meta p { margin-bottom: 5px; line-height: 1.2em; }
 .blog img.large { width: 300px; min-height: 165px; }
 
-
-
+ 
 
 /** src/Blogger/BlogBundle/Resorces/public/css/blog.css **/
 .comments { clear: both; }
@@ -29,3 +28,5 @@ form.blogger ul li { color: #ff0000; margin-bottom: 5px; }
 .comments .comment p { margin-bottom: 0; }
 .comments h3 { background: #eee; padding: 10px; font-size: 20px; margin-bottom: 20px; clear: both; }
 .comments .previous-comments { margin-bottom: 20px; }
+
+
