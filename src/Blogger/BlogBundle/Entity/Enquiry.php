@@ -5,9 +5,7 @@ namespace Blogger\BlogBundle\Entity;
     
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Email;
-use Symfony\Component\Validator\Constraints\MinLength;
-use Symfony\Component\Validator\Constraints\MaxLength;
+use Symfony\Component\Validator\Constraints\Email; 
     
     
 class Enquiry {

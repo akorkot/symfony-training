@@ -15,9 +15,10 @@ class CommentController extends Controller
     public function newAction($blog_id)
     {
         $blog = $this->getBlog($blog_id);
-
+        
         $comment = new Comment();
         $comment->setBlog($blog);
+        
         $commentType = new CommentType();
         $form   = $this->createForm($commentType, $comment);
         $buildedForm = $form->createView();
