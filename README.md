@@ -19,7 +19,7 @@ Step 3 (Create Database):
 
 Step 4 (Generate doctrine entities): 
 
-	php app/console doctrine:generate:BloggerBlogBundle
+	php app/console doctrine:schema:create
 	
 Step 5 (Generate data fixtures): 
 
