@@ -1,4 +1,26 @@
 symfony-training
 ================
 
-A Symfony project created on December 6, 2016, 2:40 pm.
+This is a blog builded with the framework Symfony 2
+
+How to install 
+---------
+Step 1 (Switch to branch develop):
+
+    git checkout develop
+
+Step 2 (Update dependecies):
+
+	composer update
+
+Step 3 (Create Database):
+
+	php app/console doctrine:database:create
+
+Step 4 (Generate doctrine entities): 
+
+	php app/console doctrine:generate:BloggerBlogBundle
+	
+Step 5 (Generate data fixtures): 
+
+	php app/console doctrine:fixtures:load
