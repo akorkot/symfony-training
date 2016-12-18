@@ -58,7 +58,11 @@ class Blog
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="blog")
      */
     protected $comments;
-    
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $slug;
     
     
     public function __construct()
@@ -279,5 +283,15 @@ class Blog
     public function removeComment(\Blogger\BlogBundle\Entity\Comment $comments)
     {
         $this->comments->removeElement($comments);
+    }
+    
+    /**
+     * Remove comments
+     *
+     * @param \Blogger\BlogBundle\Entity\Comment $comments
+     */    
+    public function __toString()
+    {
+        return $this->getTitle();
     }
 }
