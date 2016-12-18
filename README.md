@@ -23,4 +23,4 @@ Step 4 (Generate doctrine entities):
 	
 Step 5 (Generate data fixtures): 
 
-	php app/console doctrine:fixtures:load
+	php app/console doctrine:fixtures:load 
