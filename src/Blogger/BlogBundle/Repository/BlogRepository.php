@@ -12,6 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class BlogRepository extends EntityRepository
 {
+    
+    public function createQueryBuilder($alias)
+    {
+        return $this->_em->createQueryBuilder()
+            ->select($alias)
+            ->from($this->_entityName, $alias);
+    }
 
     public function getLatestBlogs($limit = null)
     {
