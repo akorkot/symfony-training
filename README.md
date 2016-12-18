@@ -1,4 +1,4 @@
-symfony-training
+Symfony Blog
 ================
 
 This is a blog builded with the framework Symfony 2
